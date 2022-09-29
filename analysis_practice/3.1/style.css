@@ -29,41 +29,14 @@ h1, h2, h3 {
 h1 {
 	font-size: 4.8vh;
 	line-height: 7.2vh;
-	margin: 1vh 0;
 }
 
 h2 {
 	font-size: 3.6vh;
 	line-height: 4.5vh;
-	margin: 0.8vh 0;
 }
 
 h3 {
 	font-size: 3vh;
 	line-height: 4.5vh;
-	margin: 0.5vh 0;
-}
-
-nav {
-	position: fixed;
-	z-index: 999;
-	top: 10px;
-	left: 10px;
-	text-align: center;
-	font-family: Poppins, sans-serif;
-	font-size: 2vh;
-	line-height: 3vh;
-}
-
-article {
-	margin: 1.5vh 0;
-	padding: 1vh 5vw;
-}
-
-section{
-	margin: 1.2vh 0;
-}
-
-p {
-	margin: 8.2vh 0;
 }
