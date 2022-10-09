@@ -75,7 +75,7 @@ article {
 section{
 	margin: 1.2vh 0;
 }
-<!--縮排-->
+
 section > p {
 	text-indent: 5%;
 }
