@@ -1,6 +1,6 @@
-@import url('http: //fonts.googleapis.com/css2?family=Lora&family=Poppins&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins&family=Source+Sans+Pro&display=swap');
 
-*{
+* {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -12,7 +12,7 @@ html {
 }
 
 body {
-	mid-height: 100%;
+	min-height: 100%;
 	width: 100%;
 	overflow-x: hidden;
 	background-color: white;
@@ -63,7 +63,7 @@ nav > a {
 	opacity: 0.6;
 }
 
-nav > a:visited{
+nav > a:visited {
 	color: white;
 }
 
@@ -72,9 +72,10 @@ article {
 	padding: 1vh 5vw;
 }
 
-section{
+section {
 	margin: 1.2vh 0;
 }
+
 section > p {
 	text-indent: 5%;
 }
@@ -84,6 +85,6 @@ p {
 }
 
 a, a:visited {
-	color:  #323232;
+	color: #323232;
 	text-decoration: underline;
 }
