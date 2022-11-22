@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+<script type="text/javascript" src="/TSPD/081ccac3adab20003deb1c047fdc37bba30cce452ec83ebf910255f4403d5237e8d750bc80719f7d?type=9"></script>
+
+		<title>Task 12</title>
+		<meta charset="utf-8">
+		<script>
+			// Add your own JS codes here
+			// 參考前一個例子 
+			// 先取得id ok
+			// 小方塊 id 等於顏色 ok
+			// 小方塊 ＋ pic 對應大方塊 ok
+
+			// 呈現 大方塊 步驟
+			// 跑一個for迴圈
+			// figure 以下的 div 全部撈出來
+			// for迴圈 把figure底下每個div 拿出來
+			// 判斷大方塊div 是不是符合 figure 底下某一個div
+			// 符合：顯示 不符合：隱藏
+			function showHidePics () {
+				let nav_id = this.id;
+				console.log(nav_id); 															//get orange, blue, yellow, red
+				let get_id = document.getElementById(nav_id)
+				console.log(get_id); 															// <div class="yellow" id="yellow"></div>
+				let selector = 'div#' + nav_id + 'Pic';
+				console.log(selector);															// div#orangePic
+				// let all_NavFigureId_items = document.querySelectorAll(selector);
+				let all_NavFigureId_items = document.querySelectorAll('figure > div'); // 因為需要把display 跟id 等元素的內容
+				console.log(all_NavFigureId_items);												//NodeList [div#orangePic.orange]
+
+				for(let i=0 ; i <all_NavFigureId_items.length ; i++) {
+					let item = all_NavFigureId_items[i];
+					if(item.id === nav_id + 'Pic'){
+						item.style.display = 'block';
+					}
+					else{
+						item.style.display = 'none';
+					}
+				}
+			}
+
+			window.onload = function () {
+				let allMenuDIVs = document.querySelectorAll('nav > div');
+				for(let i=0 ; i<allMenuDIVs.length ; i++) {
+					let menu = allMenuDIVs[i];
+					menu.addEventListener('click', showHidePics);
+				}
+			}
+
+		</script>
+		<style>
+			/* Do NOT change anything in <style> */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html {
+				width: 100%;
+				height: 100%;
+			}
+
+			body {
+				padding: 0 10%;
+			}
+
+			nav > div {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				margin: 10px;
+				cursor: pointer;
+			}
+
+			figure > div {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 500px;
+			}
+
+			div.yellow {
+				background-color: yellow;
+			}
+
+			div.red {
+				background-color: red;
+			}
+
+			div.blue {
+				background-color: blue;
+			}
+
+			div.orange {
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Do NOT change anything in <body> -->
+		<nav>
+			<div class="yellow" id="yellow"></div>
+			<div class="red" id="red"></div>
+			<div class="blue" id="blue"></div>
+			<div class="orange" id="orange"></div>
+		</nav>
+		<figure style="position: relative;">
+			<div class="yellow" id="yellowPic"></div>
+			<div class="red" id="redPic"></div>
+			<div class="blue" id="bluePic"></div>
+			<div class="orange" id="orangePic"></div>
+		</figure>
+	</body>
+</html>
