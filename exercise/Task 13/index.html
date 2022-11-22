@@ -19,17 +19,20 @@
 			function hideMenuItems () {								
 				let menuItems = $('div:not(:first-of-type)');
 				menuItems.css('display', 'none');
+				
 			}
 
-			function change_MenuItemColor () {
+			function change_MenuItemColor (event) {
+				event.stopPropagation();
+				let menuItems = $('div:not(:first-of-type)');
 				$(this).css('background-color', 'orange');	
 			}
 
 			window.onload = function() {  						
 				let divs = $('div');
 				divs.eq(0).on('click', showMenuItems);
-				$('div:not(:first-of-type)').on('click', change_MenuItemColor);
 				$('html').on('click', hideMenuItems);
+				$('div:not(:first-of-type)').on('click', change_MenuItemColor);
 			}
 
 		</script>
