@@ -7,19 +7,58 @@
 		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 		<script src="demo.js"></script>
 		<script>
-			
+			function checkRestoreDIVPos () {
+				// Get all the <div> elements
+				let divs = $('div');
+				// Get the current viewport height.
+				let vpHeight = $(window).height();
+				// Get the current amount of scrolling.
+				let scrollTop = $(window).scrollTop();
+				// Check all <div> elements to see if any of them appears in the viewport.
+				divs.each(function (index) {
+					// Get a <div> element based on the index number
+					let div = divs.eq(index);
+					// Get the distance between the top edge of the current element
+					// and the top edge of the viewport.
+					let divTop = div.offset().top;
+					/* If the height of the viewport PLUS the scrolling distance is larger 
+					   than "divTop", it means the viewport must include at least 1 pixel of 
+					   the current <div> element, so the "top" property of this element is
+					   reset to "0" (i.e., move the element up and back to its original position).
+					   Here, we subtract 50 from the total of vpHeight and scrollTop to make sure
+					   that "top" is restored only when the viewport include at least 51 pixels
+					   of the current element, so the change is more visible in the browser 
+					   (try to play around with the number and see the differences yourself.)
+					*/
+					if(vpHeight + scrollTop - 50 > divTop) {
+						div.css('top', 0);
+					}
+				});
+			}
+
+			window.onload = function () {
+				console.log($(window).height());
+				console.log($(window).scrollTop());
+				let divs = $('div');
+				console.log(divs.eq(0).offset().top);
+				
+				console.log(divs.eq(-1).offset().top);
+				checkRestoreDIVPos();
+				
+				$(document).on('scroll', checkRestoreDIVPos);
+			};
 		</script>
 		<style>
 			span.joint {
 				color:  #a6611a;
-			}
+			};
 
 			span.vocab {
 				padding: 0 4px;
 				border-radius: 2px;
 				background-color: #018571;
 				color: white;
-			}
+			};
 
 			span.vocab > span {
 				display: none;
@@ -31,11 +70,15 @@
 				color: #000a16;
 				opacity: 0.9;
 				text-indent: 0;
-			}
+			};
 
 			span.vocab:hover > span {
 				display: block;
-			}
+			};
+
+			section > p {
+				position: relative;
+			};
 
 		</style>
 	</head>
