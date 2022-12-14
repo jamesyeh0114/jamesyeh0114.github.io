@@ -29,7 +29,11 @@
 					let sectionTop = section.offset().top;
 					
 					if(vpHeight + scrollTop - 50 > sectionTop) {
-						section.css('top', 0);
+						//section.css('top', 0);
+						$(this).animate(
+							{top: 0, opacity: 1},
+							1000
+						);
 					}
 				});
 			}
@@ -41,6 +45,7 @@
 			article > section {
 				position: relative;
 				top: 50px;
+				opacity: 0;
 			}
 
 			span.joint {

@@ -31,10 +31,87 @@
 			 */
 
 			/* Add your own CSS settings above */
+			body {
+				position: relative;
+				height: 90vh;
+				display: block;
+				padding: 0 10%;
+				top: 10%;
+				overflow-x: hidden;
+				/*text-align: center;*/
+			}
+
+			figure > img {
+				background-size: cover;
+				width: 100%;
+				vertical-align: middle;
+				opacity: 0.5;
+				transition: opacity 0.3s linear;
+			}
+
+			figure {
+				position: relative;
+				width: 100%;
+				height: 35%;
+				display: block;
+				overflow-y: hidden;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+			}
+
+			figure > figcaption {
+				position: absolute;
+				right: 0;
+				top: 0;
+				background: rgb(255, 255, 255);
+				background-color: rgba(255, 255, 255, 0.5);
+				opacity: 0;
+				transition: opacity 0.3s linear;
+			}
+
+			figure:hover img {
+				opacity: 1;
+			}			
+
+			figure:hover figcaption {
+				opacity: 1;
+			}
+
+			figcaption {
+				width: 1px;
+				overflow-x: hidden;
+				white-space: nowrap;
+			}
+
+			figure:hover figcaption {
+				width: 70px;
+				transition: all 1.5s linear;
+			}	
+
+			h1 {
+				font-family: Ms Madi, sans-serif;
+				color: green;
+				font-size: 4.8vh;
+			}		
 		</style>
 	</head>
 	<body>
 		<!-- Do not use inline styles in HTML tags -->
-		
+		<h1>The Big Three!</h1>
+			<figure>
+				<figcaption>Djokovic</figcaption>
+				<img src="img/Djokovic.jpg"/>
+			</figure>
+			<figure>
+				<figcaption>Federer</figcaption>
+				<img src="img/Federer.jpg"/>
+			</figure>
+			<figure>
+				<figcaption>Nadal</figcaption>
+				<img src="img/Nadal.jpg">
+			</figure>
 	</body>
 </html>

@@ -1,64 +1,74 @@
 <!DOCTYPE HTML>
 <html lang="en-us">
 	<head>
-		<title>Example 13-2</title>
+		<title>Example 13-4</title>
 		<meta charset="utf-8">
-		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-		<script>
-			window.onload = function () {
-				let divs = $('div');
-				divs.on('click', rotateDIV);
-			};
-
-			function rotateDIV () {
-				/* Use the jQuery function addClass() to add a class name 
-				   to whichever element that triggers rotateDIV.
-				*/
-				$(this).addClass('clicked');
-			}
-		</script>
 		<style>
-			/* A different and convenient way of changing the presentation of 
-			   an HTML element is to define different CSS settings that could be 
-			   applied when different labels are assigned. In the CSS settings below,
-			   I have the settings for a regular <div> element as well as its immediate
-			   child <span>. Then, I also have a special setting for a <span> element
-			   that is an immediate child of a <div> element with a class name "clicked".
-			   Then, when I add the class name "clicked" to the <div> element, the special
-			   setting will apply to <span>.
-			  */
 			div {
+				height: 50px;
 				width: 100px;
-				height: 100px;
-				background-color: purple;
-				color: white;
-				font-family: sans-serif;
-				font-weight: bold;
-				font-size: 150%;
-				text-align: center;
-				line-height: 100px;
-			}
-
-			div > span {
-				/* Need to set <span> to be an "inline-block" element, so transformation
-				   could apply to it. Regular inline elements like <span>, <b>, <a>, etc.
-				   cannot be transformed.
-				*/
-				display: inline-block;
 				background-color: red;
-				transition: all 0.3s linear;
+				/* The "animation" property works very similar to the "transition" 
+				   property: The first value is the name of the animation created
+				   with @keyframes below, the second value is the length of the
+				   animation in seconds, and the third value is the type of change.
+				   Two additional values could be specified: The fourth one is the
+				   number of cycles for the animation - it could be a specific
+				   number, or "infinite". The fifth value specifies how the animation
+				   is presented. "Alternate" means to run the animation forward from the
+				   beginning to the end, and the backward from the end to the beginning.
+				*/
+				animation: changeLength 1s linear infinite alternate;
 			}
 
-			div.clicked > span {
-				/* As an immediate child of a <div> with a class name "clicked",
-				   the <span> element rotates clockwise by 45 degrees.
+			div:nth-of-type(2) {
+				/* Same as above, excepted that for the second <div>, the "crazyChangeLength"
+				   animation is applied.
 				 */
-				transform: rotate(45deg);
-				transition: all 0.5s linear;
+				animation: crazyChangeLength 1s linear infinite alternate;
+			}
+
+			/* Every animation starts with the keyword "@keyframes", which is followed by
+			   the name of the animation, which is "changeLength" in this case.
+			 */
+			@keyframes changeLength {
+				/* "from" means the beginning of the animation */
+				from {
+					width: 100px;
+				}
+				/* "to" means the end of the animation */
+				to {
+					width: 500px;
+				}
+			}
+
+			@keyframes crazyChangeLength {
+				/* You can also use "%" to specify a specific "frame" in
+				   the animation to have some frame-by-frame settings.
+				   Now you get the idea of "keyframes", right?
+				*/
+				/* 0% = beginning of the animation */
+				0% {
+					width: 100px;
+				}
+				10% {
+					/* You can have different CSS settings for different frames */
+					background-color: black;
+					width: 150px;
+				}
+				70% {
+					width: 50px;
+				}
+				/* 100% = end of the animation */
+				100% {
+					background-color: green;
+					width: 500px;
+				}
 			}
 		</style>
 	</head>
 	<body>
-		<div><span>+</span></div>
+		<div></div>
+		<div></div>
 	</body>
 </html>

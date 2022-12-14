@@ -6,14 +6,14 @@
 		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 		<script>
 			let index = 0;
-			window.onload - function () {
-			$('p > button').on('click', function() {
-				$('body > span').eq(index).addClass('lightUp');
-				//index = index + 1;
-				//index += 1;
-				index++;
-			});
-		};
+			window.onload = function () {
+				$('p > button').on('click', function () {
+					$('body > span').eq(index).addClass('lightUp');
+					// index = index + 1;
+					// index += 1;
+					index++;
+				});
+			};
 		</script>
 		<style>
 			body {
@@ -31,32 +31,32 @@
 				font-size: 50px;
 				line-height: 60px;
 				opacity: 0;
-			/* animation: swingChangeBgColor 3s linear infinite alternate; */
-
-
-		}
-
-		span.lightUp {
-			opacity: 1;
-			transition: opacity 0.5 ease-out;
-			animation: swingChangeBgColor;
-		}
-
-		@keyframes swingChangeBgColor {
-			0% {
-				background-color: red;
-				transform: rotate(-10deg);
+				/* animation: swingChangeBgColor 3s linear infinite alternate; */
 			}
-			50% {
-				background-color: green;
-				transform: rotate(0deg);
+
+			span.lightUp {
+				opacity: 1;
+				transition: opacity 0.5s ease-out;
+				animation: swingChangeBgColor 3s linear infinite alternate;
 			}
-			100% {
-				background-color: red;
-				transform: rotate(10deg);
+
+			@keyframes swingChangeBgColor {
+				0% {
+					background-color: red;
+					transform: rotate(-10deg);
+				}
+
+				50% {
+					background-color: green;
+					transform: rotate(0deg);
+				}
+
+				100% {
+					background-color: red;
+					transform: rotate(10deg);
+				}
 			}
-		}
-	</style>
+		</style>
 	</head>
 	<body>
 		<span>M</span>
@@ -77,4 +77,5 @@
 		<p>
 			<button>Light Up!</button>
 		</p>
-</body>
+	</body>
+</html>

@@ -1,21 +1,16 @@
 <!DOCTYPE HTML>
 <html lang="en-us">
 	<head>
-		<title>Example 14-2</title>
+		<title>Example 14-4</title>
 		<meta charset="utf-8">
 		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 		<script>
 			window.onload = function () {
 				$('nav > a:first-of-type').on('click', function () {
 					let menuItems = $('nav > a:not(:first-of-type)');
-					//menuItems.fadeOut();
-					//menuItems.fadeOut('fast');
-					//menuItems.fadeOut(2000);
-
-					//menuItems.fadeToggle();
-
-					//menuItems.hide(2000);
-					menuItems.toggle(2000);
+					menuItems.each(function (index) {
+						$(this).delay(index * 500).fadeToggle();
+					});
 				});
 			};
 		</script>
@@ -29,6 +24,7 @@
 			}
 
 			nav > a:not(:first-of-type) {
+				display: none;
 				border-left: 2px solid white;
 			}
 		</style>
