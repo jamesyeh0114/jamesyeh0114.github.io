@@ -1,26 +1,110 @@
 <!DOCTYPE HTML>
 <html lang="en-us">
 	<head>
-		<title>James Yeh's Personal Website</title>
+		<title>Welcome to my website!</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="style.css">
 		<style>
-			
+			@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&family=Oswald&display=swap');
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html {
+				height: 100%;
+				width: 100%;
+			}
+
+			body {
+				min-height: 100%;
+				width: 100%;
+			}
+
+			body {
+				position: relative;
+				display: block;
+				padding: 0 10vw;
+				overflow-x: hidden;
+			}
+
+			figure > img {
+				background-size: cover;
+				width: 100%;
+				vertical-align: middle;
+				opacity: 0.5;
+				transition: opacity 0.3s linear;
+			}
+
+			figure {
+				position: relative;
+				width: 100%;
+				height: 35vh;
+				display: block;
+				overflow-y: hidden;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+				opacity: 0.5;
+				transition: opacity 0.2s ease-out;
+			}
+
+			figure > figcaption {
+				position: absolute;
+				right: 0;
+				top: 0;
+				background: rgb(255, 255, 255);
+				background-color: rgba(255, 255, 255, 0.5);
+				opacity: 0;
+				transition: opacity 0.4s ease-out;
+			}
+
+			figure > figcaption {
+				display: block;
+				opacity: 1;
+			}
+
+			figure:hover img {
+				opacity: 1;
+				transition: opacity 0.2s ease-out;
+				cursor: pointer;
+			}			
+
+			figure:hover figcaption {
+				opacity: 1;
+				width: 110px;
+				transition: all 0.6s ease-out;
+			}
+
+			figcaption {
+				width: 1px;
+				overflow-x: hidden;
+				white-space: nowrap;
+			}
+
+			h1 {
+				height: 10vh;
+				font-family: Ms Madi, sans-serif;
+				color: green;
+				font-size: 4.8vh;
+			}		
 		</style>
 	</head>
 	<body>
-		<nav>
-			<a>+</a>
-			<a href="index.html">Home</a>
-			<a href="about_me.html">About me</a>
-			<a href="issue.html">Other issues</a>
-			<a href="contact_me.html">Contact me</a>
-		</nav>
-		<article>
-			<figure style= "text-align: center;">
-				<img src= "img/yama.jpg"/ style="width: 90vw;"/>
-			<h1>Welcome to my Website!</h1>
-			<p>This is a bilingual website designed by James Yeh since 2022</p>
-		</article>
+		<!-- Do not use inline styles in HTML tags -->
+		<h1>歡迎來到我的網站/Welcome to my personal website!</h1>
+			<h2>請選擇語言/Please select languages</h2>
+			<figure>
+				<figcaption><b>中文/Chinese</b></figcaption>
+				<a href="personalCh.html"><img src="img/Taiwan_picture.jpg"/>
+				</a>
+			</figure>
+			<figure>
+				<figcaption><b>英文/English</b></figcaption>
+				<a href="personal.html"><img src="img/America_picture.jpg"></a>
+			</figure>
 	</body>
 </html>
