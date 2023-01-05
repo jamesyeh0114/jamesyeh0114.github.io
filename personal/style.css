@@ -89,13 +89,13 @@ section > p {
 
 article > section {
 	padding-bottom: 8vh;
-	padding: 1vh 20vw;
+	padding: 1.5vh 20vw;
 	opacity: 0.8;
 	overflow: auto;
 }
 
 article > section > figure {
-	max-width: 20%;
+	max-width: 30%;
 	text-align: center;
 }
 
