@@ -12,12 +12,22 @@ html {
 }
 
 body {
+	min-height: 100%;
+	width: 100%;
 	overflow-x: hidden;
 	background-color: #F6DDCC;
 	color: #000a16;
 	font-size: 2.4vh;
 	line-height: 3.6vh;
-	font-family: 'Lora', serif;;
+	font-family: 'Lora', serif;
+
+}
+
+body > img#bg {
+	position: fixed;
+	z-index: -999;
+	width: 100%;
+	opacity: 0.2;
 }
 
 nav {
@@ -50,52 +60,58 @@ nav > a:hover {
 	transition: all 0.4s ease-out;
 }
 
-article {
-	position: relative;
-}
-
 div {
-	/*background-color: #21618C;*/
 	background-color: #21618C;
 	opacity: 0.8;
 	bottom: 0;
 	height: 24vh;
-
 }
 
-section {
-	padding-left: 10vw;
-	padding-right: 10vw;
-	padding-bottom: 8vh;
-	line-height: 30px;
+div > section > p {
+	text-indent: 0;
 }
 
-h1 {
-	font-size: 4vh;
-	line-height: 6vh;
-	margin: 1vh 0;
+article {
+	position: relative;
 }
 
-h2 {
-	font-size: 3.6vh;
-	line-height: 5.4vh;
-	margin: 0.8vh 0;
+article > figure {
+	position: relative;
+	text-align: center;
+	background-color: #EDBB99;
+	width: 100%;
 }
 
-h3 {
-	font-size: 3vh;
-	line-height: 4.5vh;
+section > p {
+	text-indent: 5%;
 	margin: 0.5vh 0;
-	padding: 0 2vh;
-	font-family: sans-serif;
 }
 
-h4 {
-	color: black;
-	font-size: 3vh;
-	padding: 0 2vh
+article > section {
+	padding-bottom: 8vh;
+	padding: 1vh 20vw;
+	opacity: 0.8;
+	overflow: auto;
 }
 
-p {
-	padding: 0 2vh
+article > section > figure {
+	max-width: 20%;
+	text-align: center;
 }
+
+article > section > figure > img {
+	width: 100%;
+	border-radius: 1vh;
+}
+
+article > section:nth-of-type(odd) > figure {
+	float: left;
+	margin: 1vh 2.5vw 0 0;
+}
+
+article > section:nth-of-type(even) > figure {
+	float: right;
+	margin: 1vh 0 0 2.5vw;
+}
+
+
