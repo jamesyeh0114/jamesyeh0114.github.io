@@ -20,7 +20,10 @@ body {
 	font-size: 2.4vh;
 	line-height: 3.6vh;
 	font-family: 'Lora', serif;
+}
 
+h1, h2, p {
+	font-family: Lora, Noto Sans TC, sans-serif;
 }
 
 body > img#bg {
@@ -61,6 +64,7 @@ nav > a:hover {
 }
 
 div {
+	position: relative;
 	background-color: #21618C;
 	opacity: 0.8;
 	bottom: 0;
@@ -71,8 +75,21 @@ div > section > p {
 	text-indent: 0;
 }
 
+img#top.top {
+	max-width: 400px;
+	height: auto;
+}
+
+img#bg {
+	position: fixed;
+	z-index: -999;
+	width: 100%;
+	opacity: 0.15;
+}
+
 article {
 	position: relative;
+	top: 4.6vh;
 }
 
 article > figure {
@@ -114,4 +131,6 @@ article > section:nth-of-type(even) > figure {
 	margin: 1vh 0 0 2.5vw;
 }
 
-
+span {
+		font-weight: bold;
+}
