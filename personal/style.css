@@ -44,6 +44,7 @@ nav {
 	font-size: 2vh;
 	opacity: 0.8;
 	z-index: 999;
+	font-weight: bold;
 }
 
 nav > a {
@@ -146,6 +147,10 @@ span {
 		padding: 1vh 5vw;
 	}
 
+	article > div {
+		width: 100%;
+	}
+
 	article > section > figure {
 		max-width: 100%;
 		text-align: center;
@@ -171,7 +176,6 @@ span {
 	nav {
 		height: 6vh;
 		font-size: 2vh;
-		font-weight: bold;
 	}
 
 	article {
