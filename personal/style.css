@@ -134,3 +134,56 @@ article > section:nth-of-type(even) > figure {
 span {
 		font-weight: bold;
 }
+
+@media only screen and (max-width: 1200px) {
+
+	body > figure {
+		width: auto;
+		height: 100%;
+	}
+
+	article > section {
+		padding: 1vh 10vw;
+	}
+
+	article > section > figure {
+		max-width: 100%;
+		text-align: center;
+	}
+
+	article > section:nth-of-type(odd) > figure {
+		max-height: 10%;
+		float: initial;
+		margin: 1vh 0;
+	}
+
+	article > section:nth-of-type(even) > figure {
+		max-height: 10%;
+		float: initial;
+		margin: 1vh 0;
+	}
+
+	article > section > figure > img {
+		width: 100%;
+		border-radius: 1vh;
+	}
+
+	nav {
+		height: 6vh;
+		font-size: 2vh;
+		font-weight: bold;
+	}
+
+	article {
+		top: 6vh;
+	}
+}
+
+
+
+
+
+
+
+
+

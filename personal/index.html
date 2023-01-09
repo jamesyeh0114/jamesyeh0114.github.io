@@ -4,7 +4,6 @@
 		<title>Welcome to my website!</title>
 		<meta charset="utf-8">
 		<style>
-			@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&family=Oswald&display=swap');
 
 			body {
 				position: relative;
@@ -38,6 +37,7 @@
 
 			figure > figcaption {
 				position: absolute;
+				display: block;
 				right: 0;
 				top: 0;
 				background: rgb(255, 255, 255);
@@ -48,7 +48,6 @@
 
 			figure > figcaption {
 				display: block;
-				opacity: 1;
 			}
 
 			figure:hover img {
@@ -70,24 +69,75 @@
 			}
 
 			h1 {
-				height: 10vh;
-				font-family: Ms Madi, sans-serif;
-				color: green;
+				height: 7.2vh;
+				color: black;
 				font-size: 4.8vh;
-			}		
+			}
+
+			h2 {
+				font-size: 3vh;
+				height: 4.5vh;
+				padding: 1vh 0;
+			}
+
+			h1#special {
+				display: none;
+			}
+
+			@media only screen and (max-width: 1200px) {
+				figure {
+					display: inline-block;
+				}
+
+				figure:hover img {
+					transition: none;
+				}
+
+				img {
+					opacity: 1;
+					transition: none;
+				}
+
+				figure:hover figcaption {
+					transition: none;
+					display: none;
+				}
+
+				figure > figcaption {
+					display: inline-block;
+					transition: none;
+					opacity: 1;
+					z-index: 999;
+				}
+
+				h1#special {
+					display: block;
+				}
+
+				article {
+					padding: 5vh 0;
+				}
+			}
+
+		}		
 		</style>
 	</head>
 	<body>
-		<h1>歡迎來到我的網站/Welcome to my personal website!</h1>
-			<h2>請選擇語言/Please select languages</h2>
+		<article><h1 id="fix">歡迎來到我的網站<br/>Welcome to my personal website!</h1>
+			<section>
+				<article><h2>請選擇語言/Please select languages<br/>請點擊圖片/Please click on the pictures</h2></article>
 			<figure>
+				<h1 id="special">中文/Chinese</h1>
 				<figcaption><b>中文/Chinese</b></figcaption>
-				<a href="personalCh.html"><img src="img/Taiwan_picture.jpg"/>
+				<a id="special" href="personalCh.html"><img src="img/Taiwan_picture.jpg"/>
 				</a>
 			</figure>
 			<figure>
+				<h1 id="special">英文/English</h1>
 				<figcaption><b>英文/English</b></figcaption>
-				<a href="personal.html"><img src="img/America_picture.jpg"></a>
+				<a id="special" href="personal.html"><img src="img/America_picture.jpg"></a>
 			</figure>
+		</section>
+	</article>
 	</body>
 </html>
