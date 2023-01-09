@@ -37,7 +37,7 @@ nav {
 	position: fixed;
 	top: 0;
 	height: 4.6vh;
-	background-color: #21618C;
+	background-color: #89CFF0;
 	width: 100%;
 	line-height: 4.6vh;
 	margin-left: 0;
@@ -176,6 +176,7 @@ span {
 	nav {
 		height: 6vh;
 		font-size: 2vh;
+		font-weight: bold;
 	}
 
 	article {
